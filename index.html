@@ -2,39 +2,84 @@
 <html>
 <head>
     <meta charset="UTF-8" />
-    <title>Twitter Showdown</title>
+    <title>United States presidential election 2012 live on twitter</title>
     <link rel="stylesheet" href="fonts/fonts.css" type="text/css" />
     <link rel="stylesheet" href="css/map.css" type="text/css" />
     <link rel="stylesheet" href="css/style.css" type="text/css" />
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+    <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36134614-1']);
+  _gaq.push(['_setDomainName', 'giorgiouboldi.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
 </head>
 <body>
 
-	<div id="header">
-        <h1>Twitter Showdown</h1>
-    </div>
-    <div id="content">
-        <img id="logo" src="img/illustration.png" alt="Work vs. Play">
+	
+
+       
+        <div id="content">
+          
         <table id="counter">
         	<tr>
-        		<th class='first'>First Tweets</th>
-        		<th class='second'>Second Tweets</th>
+        		<th class='first'>First </th>
         	</tr>
-           	<tr>
-           	    <td class='first'>--</td>
+        	<tr>	
+        		<td class='first'>--</td>
+        	</tr>
+        </table>
+        <table id="counter">	
+        	<tr>
+        		<th class='second'>Second </th>
+        	</tr>
+        	<tr>
         		<td class='second'>--</td>
         	</tr>
         </table>
-        <a href="#" id="stop">Pause</a>
-        <div id="about">
-            <h2>About this Site</h2>
-            <p>Follow two competing live Twitter feeds, one including tweets with the keyword 'play', and one with tweets that include the keyword 'work'. Find out which parts of the country are working hardest and which ones are having the most fun. </p>
-        </div>
-    </div>
-
+        <table id="counter">	
+        	<tr>	
+        		<th class='third'>Third </th>
+        	</tr>
+        	<tr>
+        		<td class='third'>--</td>		
+        	</tr>
+        </table>
+        <table id="counter">
+        	<tr>	
+        		<th class='fourth'>Fourth </th>
+        	</tr>
+        	<tr>
+        		<td class='fourth'>--</td>
+        	</tr>
+        </table>
+        <table id="counter">        	
+        	<tr>	
+        		<th class='fifth'>Fifth </th>
+        	</tr>
+        	<tr>
+        		<td class='fifth'>--</td>
+        	</tr>
+        </table>
+        
+       
+    </div>  
+	<div id="info">
+	    <h6> Info</h6>
+		<h6> Based on <a href="https://github.com/mapbox/live-tweets-template">Mapbox live-tweets-template</a></h6>
+	</div>
     <div id="map" class="map"></div>
         
-    <!-- External libraries and site script -->
+ <!-- External libraries and site script -->
     <script src="ext/jquery.min.js"></script>
     <script src="ext/underscore.min.js"></script>
     <script src="ext/modestmaps.min.js"></script>
@@ -50,9 +95,12 @@
     
         // Specify the tweets and location / radius to search
         var tweets = [
-            'work',             // First term
-            'play',             // Second term
-            '39,-98,1500mi'     // search location and radius (lat,lon,radius)
+            'Bersani',            
+            'renzi',
+            'vendola',            
+            'tabacci',
+            'primarie',            
+            '42.50,12.50,1000mi'     // search location and radius (lat,lon,radius)
         ];
 
         // Make a new map in the #map element
@@ -60,16 +108,15 @@
             // Specify the MapBox API url
             api: 'http://a.tiles.mapbox.com/v3/examples.map-dg7cqh4z.jsonp',
             center: {
-                lat: 40,        // Intial center point and zoom level.
-                lon: -80,       // To find coordinates and zoom levels, 
-                zoom: 4         // try: http://www.getlatlon.com
+                lat: 42.50,        // Intial center point and zoom level.
+                lon: 12.50,       // To find coordinates and zoom levels, 
+                zoom: 6         // try: http://www.getlatlon.com
             },
-            zoomRange: [2, 15], // Limit zooming on the map to these levels
-            features: [         // Map features (see readme.md)
+            zoomRange: [6, 15], // Limit zooming on the map to these levels
+           features: [         // Map features (see readme.md)
                 'zoomwheel',
                 'zoombox',
                 'zoompan',
-                'share'
             ]
         }, tweetRace.start);  // Callback function to start when map is loaded
         

@@ -52,7 +52,7 @@ table {
 body,
 input,
 textarea {
-    font: 16px/24px 'DroidSerifRegular', sans-serif;
+    font: 18px/20px 'DroidSerifRegular', sans-serif;
     color: #333;
     -webkit-font-smoothing: antialiased;
     }
@@ -76,8 +76,16 @@ h1,h2 {
     padding: 20px 0;
     text-align: center;
     }
+    
+h6 {
+	text-align: left;
+	margin-left:20px;
+    margin-bottom: 0px;
+    font: 12px/20px 'DroidSansBold', sans-serif;
+    }    
 
-p {
+p { font: 16px/20px 'DroidSerifRegular', sans-serif;
+	text-align: center;
     margin-bottom: 20px;
     }
 
@@ -93,26 +101,40 @@ body > div {
     z-index: 0;
     }
 
-#header {
+#info {
     position: absolute;
-    top: 0px;
-    right: 0px;
-    width: 320px;
+    padding-top: 20px;
+    bottom:0px;
+    left: 0px;
+    width: 20%;
     height: 50px;	
     background: #444;
     color: white;
+    
+    }
+#logo {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	bottom: 20px;
+	padding: 0 0px;
+	width: 100%;
+	height:10%;
+    background: rgb(255,255,255); /* old IE */
+    background: rgba(255,255,255,.9);
+    overflow-x: auto;
+    z-index: 2;
     }
 
 #content {
-	position: absolute;
-	top: 50px;
-	right: 0px;
-	bottom: 0px;
-	padding: 0 20px;
-	width: 279px;
-    background: rgb(255,255,255); /* old IE */
-    background: rgba(255,255,255,.9);
-    border-left: 1px solid #ccc;
+    position: absolute;
+	left: 0;
+	top:0px;
+	bottom: 50px;
+	padding: 0 0px;
+	width: 20%;
+    background: rgb(255,255,215); /* old IE */
+    background: rgba(255,255,215,.9);
     overflow-x: auto;
     z-index: 2;
     }
@@ -120,46 +142,57 @@ body > div {
 #content img {
 	display: block;
     margin: 0px auto;
-    padding: 20px 0;
+    padding: 0px 0;
     width: 100%;
-    max-width: 280px;
     vertical-align: top;
-    border-bottom: 1px solid #ccc;
     }
 
 #counter {
-    margin: 20px auto 0 auto;
+    margin: 0px auto 0 auto;
     width: 100%;
-    border: 1px solid #ccc;
+    height:20%;
     }
 
 th {
-    padding: 10px 0;
-    width: 50%;
-    font: .75em/1em 'DroidSansBold', sans-serif;
-    text-align: center;
+    padding: 10px 20px;
+	font: .75em/1em 'DroidSansBold', sans-serif;
+    text-align: left;
     text-transform: uppercase;
-	border-bottom: 1px solid #ccc;
+    
+	
     }
 
 th.first, td.first {
-	border-right: 1px solid #ccc;
+background: #27AAE1;
     }
+th.second, td.second {
+background: #DDDD8A;
+    }
+th.third, td.third {
+background: #28E0D6;
+    }
+th.fourth, td.fourth {
+background: #ACE5B5;
+    }
+th.fifth, td.fifth {
+background: #E5ACAC;
+    }        
+            
     
 td { 
-    font: 4em/1em 'DroidSerifBold', Georgia, serif;
-    text-align: center;
-    padding: 20px 0;
+    font: 2em/1em 'DroidSerifBold', Georgia, serif;
+    text-align: left;
+    padding: 0px 20px;
+    color:#FFFFFF;
     }
 
-td.first { color: #d97e51;}
-td.second { color: #5dbfe1;}
+
 
 #stop {
 	display: block;
 	padding: 10px 0;
 	margin-bottom: 20px;
-	border: 1px solid #ccc;
+	
 	border-top: 0;
 	background: #f2f2f2 url(../img/pause-play.png) 10px 10px no-repeat;
 	font: .75em/1em 'DroidSansBold', Georgia, serif;
@@ -176,7 +209,8 @@ td.second { color: #5dbfe1;}
 	}
 
 #about {
-    border-top: 1px solid #ccc;
+	margin-top:10px;
+	margin-bottom:10px;
     }
 
 /* Map */   
@@ -231,8 +265,11 @@ a.zoomer {
     position: relative;
     cursor: pointer;
     }
-.mmg-first { background: url(../img/work.png) no-repeat left bottom; }
-.mmg-second { background: url(../img/play.png) no-repeat left bottom; }
+.mmg-first { background: url(../img/obama.png) no-repeat left bottom; }
+.mmg-second { background: url(../img/romney.png) no-repeat left bottom; }
+.mmg-third { background: url(../img/obama.png) no-repeat left bottom; }
+.mmg-fourth { background: url(../img/romney.png) no-repeat left bottom; }
+.mmg-fifth { background: url(../img/obama.png) no-repeat left bottom; }
 
 .mmg .overlay {
     width: 190px;
@@ -284,10 +321,16 @@ a.zoomer {
     visibility: hidden;
     z-index: 1;
     }
-.mmg-first .arrow-down { background: rgba(217,126,81,1); }
-.mmg-first .overlay { background: #d97e51; }
-.mmg-second .arrow-down { background: rgba(93,191,225,1); }
-.mmg-second .overlay { background: #5dbfe1; }
+.mmg-first .arrow-down { background: #27AAE1; }
+.mmg-first .overlay { background: #27AAE1; }
+.mmg-second .arrow-down { background: #DDDD8A; }
+.mmg-second .overlay { background: #DDDD8A; }
+.mmg-third .arrow-down { background: #28E0D6; }
+.mmg-third .overlay { background: #28E0D6; }
+.mmg-fourth .arrow-down { background: #ACE5B5; }
+.mmg-fourth .overlay { background: #ACE5B5; }
+.mmg-fifth .arrow-down { background: #E5ACAC; }
+.mmg-fifth .overlay { background: #E5ACAC; }
 
 /* embed */
 

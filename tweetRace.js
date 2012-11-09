@@ -8,7 +8,10 @@ tweetRace.tweets = [];
 tweetRace.start = _.throttle(function(){
     $('th.first').text(tweets[0] + ' tweets');
     $('th.second').text(tweets[1] + ' tweets');
-    tweetRace.getTweets(tweets[0] + ' OR ' + tweets[1], tweets[2]);
+    $('th.third').text(tweets[2] + ' tweets');
+    $('th.fourth').text(tweets[3] + ' tweets');
+    $('th.fifth').text(tweets[4] + ' tweets');
+    tweetRace.getTweets(tweets[0] + ' OR ' + tweets[1] + ' OR ' +  tweets[2] + ' OR ' + tweets[3] + ' OR ' + tweets[4],tweets[5]);
 }, 2000);
     
 tweetRace.params = {
@@ -62,7 +65,7 @@ tweetRace.processTweet = function(d) {
                 time: formatDate(new Date(element.created_at)),
                 text: element.text,
                 user: '@' + element.from_user,
-                category: (element.text.toLowerCase().indexOf(tweets[0].toLowerCase()) >= 0) ? 'first' : 'second'
+                category: (element.text.toLowerCase().indexOf(tweets[0].toLowerCase()) >= 0) ? 'first' : 'second' : 'third' : 'fourth' : 'fifth'
             });
         }
     });
@@ -89,8 +92,11 @@ tweetRace.processTweet = function(d) {
 // Update counters
 tweetRace.counters = function() {
     var first = $('.mmg-first').length,
-        second = $('.mmg-second').length;
-    
+        second = $('.mmg-second').length,
+		third = $('.mmg-third').length,
+        fourth = $('.mmg-fourth').length,
+        fifth = $('.mmg-fifth').length;
+        
     if (first > 0) {
         $('td.first').text(first);
     } else {
@@ -100,6 +106,21 @@ tweetRace.counters = function() {
         $('td.second').text(second);
     } else {
         $('td.second').text('--');
+    }
+      if (third > 0) {
+        $('td.third').text(third);
+    } else {
+        $('td.third').text('--');
+    }
+      if (fourth > 0) {
+        $('td.fourth').text(fourth);
+    } else {
+        $('td.fourth').text('--');
+    }
+      if (fifth > 0) {
+        $('td.fifth').text(fifth);
+    } else {
+        $('td.fifth').text('--');
     }
 };
 
